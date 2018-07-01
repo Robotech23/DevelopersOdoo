@@ -1,0 +1,31 @@
+<odoo>
+	<data>
+        <record id="impuestos_paperformat" model="report.paperformat">
+            <field name="name">Formato Facturas</field>
+            <field name="default" eval="False" />
+            <field name="format">custom</field>
+            <field name="page_height">320</field>
+            <field name="page_width">220</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">10</field>
+            <field name="margin_bottom">10</field>
+            <field name="margin_left">10</field>
+            <field name="margin_right">10</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">10</field>
+            <field name="dpi">90</field>
+        </record>
+
+		<report
+    		id="reporte_pdf_view"
+    		model="report.impuestos1.test_template"
+    		string="Reportes PDF"
+    		report_type="qweb-pdf"
+    		name="impuestos1.test_template"
+    		file="impuestos1.test_template"
+    		menu="False"
+            paperformat="impuestos_paperformat"
+		/>
+
+	</data>
+</odoo>

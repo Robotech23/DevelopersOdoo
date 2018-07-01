@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ***** PLantilla que contiene todo los campos a Imprimir *****-->
+<template id="test_template">
+    <t t-call="report.html_container">
+        <t t-call="report.internal_layout">
+            <div class="page">
+                <div>
+                </div>
+                <div class="container">
+                  <h1>Libro Diario</h1>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-2">
+                        <strong>Periodo: </strong>
+                        <strong><span t-esc="data['form']['periodo_compras_inicio']"/></strong>
+                        <span>/</span>
+                        <strong><span t-esc="data['form']['periodo_compras_fin']"/></strong>:<br/>
+                        <br/>
+                    </div>
+                </div>
+                <!-- ***** Cabecera de la tabla donde se representaran los datos *****-->
+                 <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Código</th >
+                            <th>Descripción</th>
+                            <th>Debe</th >
+                            <th>Haber</th>
+                        </tr>
+                    </thead>
+                    <!-- ***** Cuerpo de la tabla (Datos de las facturas representados) *****-->
+                    <tbody>
+                        <tr>
+                            <td>1.1.01.01.999</td>
+                            <td>Movimientos transitorios de Caja Chica</td>
+                            <td>29.000,00</td>
+                            <td>29.000,00</td>
+                        </tr>
+
+                                            
+                     </tbody>
+                </table>
+            </div>
+        </t>
+    </t>
+</template>
+</odoo>
